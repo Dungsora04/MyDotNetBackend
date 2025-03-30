@@ -1,0 +1,47 @@
+# === BUILD ===
+bin/
+obj/
+out/
+Migrations/
+
+# === USER SPECIFIC ===
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# === ENVIRONMENT CONFIGS / SECRETS ===
+appsettings.Local.json
+secrets.json
+.env
+.env.*             # e.g. .env.development, .env.production
+appsettings.json   # Optional if no secrets
+
+# === IDEs ===
+.vscode/
+.idea/
+*.code-workspace
+
+# === LOGS / CACHE / TEMP ===
+*.log
+*.tmp
+*.bak
+*.swp
+*.mdb
+*.pdb
+*.cache
+
+# === NUGET / DEPENDENCIES ===
+packages/
+.nuget/
+*.nupkg
+
+# === EF CORE ===
+_Migrations/         # Optional if auto-generated
+*.dbmdl
+
+# === VS / OS ===
+*.vs/
+*.DS_Store
+Thumbs.db
+appsettings.json
