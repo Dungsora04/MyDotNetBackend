@@ -26,8 +26,8 @@ namespace DotNetBackend.Models
 
         public string Bio { get; set; } = "";
 
-        public ICollection<UserFollow> Followers { get; set; }
-        public ICollection<UserFollow> Following { get; set; }
+        public ICollection<UserFollow> Followers { get; set; } = new List<UserFollow>();
+        public ICollection<UserFollow> Following { get; set; } = new List<UserFollow>();
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; }

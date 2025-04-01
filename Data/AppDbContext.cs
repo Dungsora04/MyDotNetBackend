@@ -48,7 +48,7 @@ namespace DotNetBackend.Data
                 .HasOne(r => r.Post)
                 .WithMany(p => p.Replies)
                 .HasForeignKey(r => r.PostId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade); 
 
             // Post → User (optional if needed) one-to-many (mean one user can have many posts, but one post belongs to one user)
             modelBuilder.Entity<Post>()
@@ -106,16 +106,6 @@ namespace DotNetBackend.Data
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            // var entries = ChangeTracker
-            //     .Entries()
-            //     .Where(e => e.Entity is User && e.State == EntityState.Modified);
-
-            // foreach (var entry in entries)
-            // {
-            //     ((User)entry.Entity).UpdatedAt = DateTime.UtcNow;
-            // }
-
-            // return await base.SaveChangesAsync(cancellationToken);
             var now = DateTime.UtcNow;
 
             var updatedUsers = ChangeTracker.Entries<User>()

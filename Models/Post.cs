@@ -20,9 +20,9 @@ namespace DotNetBackend.Models
 
         public string? Img { get; set; }
 
-        public ICollection<PostLike> Likes { get; set; }
+        public ICollection<PostLike> Likes { get; set; } = new List<PostLike>();
 
-        public ICollection<Reply> Replies { get; set; }
+        public ICollection<Reply> Replies { get; set; } = new List<Reply>();
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime CreatedAt { get; set; }

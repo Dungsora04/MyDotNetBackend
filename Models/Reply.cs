@@ -21,7 +21,7 @@ public class Reply
     public string UserId { get; set; } // Foreign key to the user (could be just a string from JWT)
 
     [ForeignKey("UserId")]
-    public User User { get; set; }
+    public User User { get; set; } //
 
     [Required]
     public string Username { get; set; } // Snapshot username

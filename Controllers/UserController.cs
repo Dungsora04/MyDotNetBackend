@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using DotNetBackend.Data;
+using DotNetBackend.Dtos;
 using DotNetBackend.DTOs;
 using DotNetBackend.Models;
 using DotNetBackend.Services;
@@ -227,10 +228,10 @@ namespace DotNetBackend.Controllers
         {
             try
             {
-                var currentUser = HttpContext.Items["User"] as User; 
+                var currentUser = HttpContext.Items["User"] as User;
                 if (currentUser == null)
                 {
-                    return Unauthorized(new { message = "User not authenticated! Please log in" }); 
+                    return Unauthorized(new { message = "User not authenticated! Please log in" });
                 }
 
                 var user = await _context.Users
